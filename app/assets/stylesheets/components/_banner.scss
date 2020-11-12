@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+.home-banner {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+    url('https://images.unsplash.com/photo-1530034424313-9be028eeae5a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80');
+  background-size: cover;
+  background-position: center;
+  height: 30vh;
+  color: #eee;
+  text-align: center;
+  padding-top: 10vh;
+
+  h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 60px;
+  }
+}

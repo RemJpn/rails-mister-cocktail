@@ -1,20 +1,25 @@
-<h1>Cocktails</h1>
 
-<div class="cocktails">
-  <% @cocktails.each do |cocktail|%>
-    <div class="card-cocktail">
-      <p class="card-cocktail-name">
-        <%= cocktail.name %>
-      </p>
-      <ul class="card-cocktail-ingredients">
-        <% cocktail.ingredients.each do |ingredient| %>
-          <li>
-            <%= ingredient.name %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<div class="home-banner">
+  <h1>Veille de cuite</h1>
 </div>
 
-<%= link_to "Propose a new cocktail!", new_cocktail_path  %>
+<div class="container">
+  <div class="row">
+    <% @cocktails.each do |cocktail|%>
+      <div class="card-cocktail col-2 m-3" style="background-image: url('https://source.unsplash.com/500x500/?cocktail')">
+        <p class="card-cocktail-name">
+          <%= link_to cocktail.name, cocktail_path(cocktail) %>
+        </p>
+        <!-- <ul class="card-cocktail-ingredients">
+          <% cocktail.ingredients.each do |ingredient| %>
+            <li>
+              <%= ingredient.name %>
+            </li>
+          <% end %>
+        </ul> -->
+      </div>
+    <% end %>
+  </div>
+
+</div>
+

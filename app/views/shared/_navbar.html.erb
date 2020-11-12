@@ -1,0 +1,16 @@
+<nav class="navbar navbar-light bg-light">
+  <%= link_to "#", class: "navbar-brand" do %>
+    <div class="rounded-circle bg-warning navbar-logo">
+      <i class="fas fa-cocktail text-white"></i>
+    </div>
+
+  <% end %>
+
+  <div class="d-flex">
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <%= link_to "Add", new_cocktail_path, class:"btn btn-warning ml-sm-2" %>
+  </div>
+</nav>
