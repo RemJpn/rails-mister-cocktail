@@ -1,0 +1,20 @@
+<h1>Cocktails</h1>
+
+<div class="cocktails">
+  <% @cocktails.each do |cocktail|%>
+    <div class="card-cocktail">
+      <p class="card-cocktail-name">
+        <%= cocktail.name %>
+      </p>
+      <ul class="card-cocktail-ingredients">
+        <% cocktail.ingredients.each do |ingredient| %>
+          <li>
+            <%= ingredient.name %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "Propose a new cocktail!", new_cocktail_path  %>
