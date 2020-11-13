@@ -4,7 +4,7 @@
   <% banner_img = 'https://source.unsplash.com/1660x900/?cocktail' %>
 <% end %>
 
-<div class="cocktail-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+<div class="cocktail-banner mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
   url(<%= banner_img %>)">
   <h1>
     <%= @cocktail.name %>
@@ -12,7 +12,7 @@
 </div>
 
 <div class="container mt-4">
-  <div class="row">
+  <div class="row mb-5">
     <div class="col-6">
       <h3>All you need:</h3>
       <ul>
@@ -32,6 +32,30 @@
       <h3>Add an ingredient</h3>
       <%= render 'shared/dose-form' %>
     </div>
+
+  </div>
+
+  <div class="mb-5" >
+    <h3>Reviews from other drunks:</h3>
+    <ul>
+      <% @cocktail.reviews.each do |review| %>
+        <li>
+          <%= review.rating %>
+          <i class="fas fa-star text-warning"></i>
+          &nbsp - &nbsp
+          <%= review.content %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="container bg-dark border p-4">
+    <h4>Proclaim your opinion to the world!</h4>
+    <%= simple_form_for [@cocktail, @review] do |f| %>
+      <%= f.input :content %>
+      <%= f.input :rating, collection: 1..5 %>
+      <%= f.submit %>
+    <% end %>
 
   </div>
 
