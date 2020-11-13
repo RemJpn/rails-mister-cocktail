@@ -16,3 +16,27 @@
     font-size: 60px;
   }
 }
+
+.cocktail-banner {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+    url('https://images.unsplash.com/photo-1530034424313-9be028eeae5a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80');
+  background-size: cover;
+  background-position: center;
+  height: 30vh;
+  color: #eee;
+  text-align: center;
+  padding-top: 10vh;
+}
+
+.banner-add {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+    url('https://images.unsplash.com/photo-1547059470-3b0c7cd958a4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80');
+  background-size: cover;
+  background-position: center;
+  height: 30vh;
+  color: #eee;
+  text-align: center;
+  padding-top: 10vh;
+}

@@ -1,16 +1,38 @@
-<h1>
-  <%= @cocktail.name %>
-</h1>
+<div class="cocktail-banner">
+  <h1>
+    <%= @cocktail.name %>
+  </h1>
+</div>
 
-<ul>
-  <% @cocktail.doses.each do |dose| %>
-    <li>
-      <%= dose.ingredient.name %> - <%= dose.description %>
-      <%= link_to "Delete", dose_path(dose), method: :delete  %>
-    </li>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-6">
+      <h3>All you need:</h3>
+      <ul>
+        <% @cocktail.doses.each do |dose| %>
+          <li>
+            <%= dose.ingredient.name %> - <%= dose.description %>
+            <%= link_to dose_path(dose), method: :delete, data: {confirm: 'Are you sure?'} do %>
+              <i class="far fa-trash-alt"></i>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="col-6">
+      <%#= link_to  "Add an ingredient", new_cocktail_dose_path(@cocktail)  %>
+      <h3>Add an ingredient</h3>
+      <%= render 'shared/dose-form' %>
+    </div>
+
+  </div>
+
+  <br>
+  <%= link_to cocktails_path, class: "back-button text-warning" do %>
+    <i class="fas fa-arrow-circle-left"></i>
   <% end %>
-</ul>
 
-<%= link_to  "Add an ingredient", new_cocktail_dose_path(@cocktail)  %>
-<br>
-<%= link_to "Back", cocktails_path  %>
+</div>
+
+

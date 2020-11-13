@@ -7,11 +7,23 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import 'select2/dist/css/select2';
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
 body {
   background-color: #091A2F;
+  color: white;
+
+  h1, h2, h3, h4, p{
+    font-family: 'Roboto', sans-serif;
+  }
+}
+
+.select2-results__option {
+  color:black;
 }
