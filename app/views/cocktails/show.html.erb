@@ -28,6 +28,10 @@
 
   </div>
 
+  <% if @cocktail.picture.attached? %>
+    <%= cl_image_tag @cocktail.picture.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+
   <br>
   <%= link_to cocktails_path, class: "back-button text-warning" do %>
     <i class="fas fa-arrow-circle-left"></i>

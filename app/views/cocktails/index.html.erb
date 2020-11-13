@@ -7,20 +7,13 @@
   <h2 class="text-center text-white mt-5">Find new ways to get a hangover!</p>
   <div class="d-flex flex-wrap justify-content-around">
     <% @cocktails.each do |cocktail|%>
-      <div class="card-cocktail m-3" style="background-image:
-        linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-        url('https://source.unsplash.com/500x500/?cocktail')">
-        <p class="card-cocktail-name">
-          <%= link_to cocktail.name, cocktail_path(cocktail) %>
-        </p>
-        <!-- <ul class="card-cocktail-ingredients">
-          <% cocktail.ingredients.each do |ingredient| %>
-            <li>
-              <%= ingredient.name %>
-            </li>
-          <% end %>
-        </ul> -->
-      </div>
+
+      <% if cocktail.picture.attached? %>
+        <%= render partial: "shared/card-cocktail", locals: { cocktail: cocktail, url: cl_image_path(cocktail.picture.key) }  %>
+      <% else %>
+        <%= render partial: "shared/card-cocktail", locals: { cocktail: cocktail, url: 'https://source.unsplash.com/500x500/?cocktail' } %>
+      <% end %>
+
     <% end %>
   </div>
 
@@ -31,4 +24,3 @@
   </p>
 
 </div>
-
